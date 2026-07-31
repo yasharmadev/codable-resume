@@ -5,9 +5,13 @@
   "description": "Codable resume in Typst — edit in code, export to PDF",
   "scripts": {
     "build": "bash scripts/build.sh",
-    "build:plain": "typst compile resume.typ resume.pdf",
-    "build:photo": "typst compile --input photo=true resume.typ resume-photo.pdf",
-    "watch": "typst watch resume.typ resume.pdf",
-    "watch:photo": "typst watch --input photo=true resume.typ resume-photo.pdf"
+    "build:modern": "typst compile --root . templates/modern.typ resume-modern.pdf && typst compile --root . --input photo=true templates/modern.typ resume-modern-photo.pdf",
+    "build:original": "typst compile --root . templates/original.typ resume-original.pdf && typst compile --root . --input photo=true templates/original.typ resume-original-photo.pdf",
+    "build:plain": "typst compile --root . resume.typ resume.pdf",
+    "build:photo": "typst compile --root . --input photo=true resume.typ resume-photo.pdf",
+    "watch": "typst watch --root . resume.typ resume.pdf",
+    "watch:photo": "typst watch --root . --input photo=true resume.typ resume-photo.pdf",
+    "watch:modern": "typst watch --root . templates/modern.typ resume-modern.pdf",
+    "watch:original": "typst watch --root . templates/original.typ resume-original.pdf"
   }
 }

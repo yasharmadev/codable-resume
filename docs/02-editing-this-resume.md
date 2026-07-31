@@ -1,16 +1,18 @@
 # Editing this resume
 
-Where to change what in `resume.typ`, and how to add/remove entries without breaking the syntax.
+Where to change what in `content/data.typ`, and how to add/remove entries without breaking the syntax.
 
-## File structure (top to bottom)
+## File structure
 
-1. **Design system** — colors, spacing (optional to change).
-2. **Page & typography** — margins, font size (optional).
-3. **Section heading style** — `#show heading.where(...)` (optional).
-4. **Your data** — name, contact, experience, education, skills, projects.
-5. **Resume body** — layout that uses the data; edit only if you want structural changes.
+| File | Purpose |
+|------|---------|
+| **`content/data.typ`** | All resume content — name, contact, experience, education, skills, projects. **Edit this file** when updating your info. |
+| **`assets/`** | Static files such as `profile_pic.jpg` (used by photo builds). |
+| **`templates/modern.typ`** | Modern Professional layout (compact sans-serif, navy accent, ATS-friendly). Default. |
+| **`templates/original.typ`** | Original Teal Classic layout (section bars, teal accent). |
+| **`resume.typ`** | Default entry point (currently includes the Modern template). |
 
-Focus on the **“Your data”** section when updating your info.
+Focus on **`content/data.typ`** when updating your info — both variants read from it. Layout and styling live in the template files.
 
 ---
 
@@ -88,7 +90,7 @@ Same idea: array of dictionaries with `degree`, `institution`, `dates`, and opti
 
 - Change the **heading** string.
 - Edit the **arrays**: add/remove items in the parentheses, comma-separated, e.g. `("A", "B", "C")`.
-- In the resume, `skills-content` uses these; if you add a new category (e.g. `skills-frameworks`), add a corresponding line in `skills-content` that references it (see the existing pattern with `skills-languages`, `skills-systems`, `skills-tools`).
+- In the resume templates, skills are rendered from the category arrays automatically. To add a new category, add a `#let skills-...` array in `content/data.typ` and a matching line in both `templates/modern.typ` and `templates/original.typ`.
 
 ---
 
@@ -113,12 +115,19 @@ Same idea: array of dictionaries with `degree`, `institution`, `dates`, and opti
 - **Unclosed quotes** → ensure every `"` has a matching `"`.
 - **Wrong parentheses** → each `(` needs a `)`; count them if things break.
 
-After editing, run:
+After editing, build both templates for comparison:
 
 ```bash
-typst compile resume.typ resume.pdf
+npm run build
 ```
 
-If the compiler reports a line number, go to that line and check commas, quotes, and parentheses.
+Or build a single variant:
+
+```bash
+npm run build:modern
+npm run build:original
+```
+
+Outputs: `resume-modern.pdf`, `resume-original.pdf` (and photo variants).
 
 Next: [03 – Styling and layout](03-styling-and-layout.md) to change colors, spacing, and section style.

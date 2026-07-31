@@ -108,15 +108,20 @@ All content is defined at the top of `resume.typ`. Edit these and leave the “R
 ```
 codable-resume/
 ├── README.md       # This file — installation and usage
+├── assets/         # Static assets (profile photo, etc.)
+│   └── profile_pic.jpg
+├── content/        # Resume content (edit here)
+│   └── data.typ    # Name, experience, education, skills, projects
 ├── docs/           # Typst learning guides (see docs/README.md)
-│   ├── README.md           # Index and links to official Typst docs
-│   ├── 01-typst-basics.md  # Syntax: markup, code, variables, arrays
-│   ├── 02-editing-this-resume.md  # Where to change what in resume.typ
-│   └── 03-styling-and-layout.md  # Colors, set/show, block, grid, line
+│   ├── README.md
+│   ├── 01-typst-basics.md
+│   ├── 02-editing-this-resume.md
+│   └── 03-styling-and-layout.md
 ├── package.json    # Scripts: npm run build, npm run watch
-├── resume.typ      # Source: edit this file
+├── resume.typ      # Default entry point (includes modern template)
+├── templates/      # Layout variants (modern, original)
 ├── resume.pdf      # Generated output (created by build)
-└── .gitignore      # Ignores resume.pdf by default
+└── .gitignore
 ```
 
 ## Customization
