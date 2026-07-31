@@ -1,0 +1,10 @@
+---
+description: Git commit rules — no attribution trailers
+alwaysApply: true
+---
+
+# Git commits
+
+- Never add `Co-authored-by`, `Made-with`, or any Cursor/agent attribution trailer to commits.
+- Do not use `git commit --trailer`.
+- Use plain `git commit -m "message"` only, or `git commit-tree` if the environment injects trailers.

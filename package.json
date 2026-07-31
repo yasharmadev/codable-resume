@@ -4,7 +4,10 @@
   "private": true,
   "description": "Codable resume in Typst — edit in code, export to PDF",
   "scripts": {
-    "build": "typst compile resume.typ resume.pdf",
-    "watch": "typst watch resume.typ resume.pdf"
+    "build": "bash scripts/build.sh",
+    "build:plain": "typst compile resume.typ resume.pdf",
+    "build:photo": "typst compile --input photo=true resume.typ resume-photo.pdf",
+    "watch": "typst watch resume.typ resume.pdf",
+    "watch:photo": "typst watch --input photo=true resume.typ resume-photo.pdf"
   }
 }
