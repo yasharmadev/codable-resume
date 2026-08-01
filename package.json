@@ -5,13 +5,18 @@
   "description": "Codable resume in Typst — edit in code, export to PDF",
   "scripts": {
     "build": "bash scripts/build.sh",
-    "build:modern": "typst compile --root . templates/modern.typ resume-modern.pdf && typst compile --root . --input photo=true templates/modern.typ resume-modern-photo.pdf",
-    "build:original": "typst compile --root . templates/original.typ resume-original.pdf && typst compile --root . --input photo=true templates/original.typ resume-original-photo.pdf",
-    "build:plain": "typst compile --root . resume.typ resume.pdf",
-    "build:photo": "typst compile --root . --input photo=true resume.typ resume-photo.pdf",
-    "watch": "typst watch --root . resume.typ resume.pdf",
-    "watch:photo": "typst watch --root . --input photo=true resume.typ resume-photo.pdf",
-    "watch:modern": "typst watch --root . templates/modern.typ resume-modern.pdf",
-    "watch:original": "typst watch --root . templates/original.typ resume-original.pdf"
+    "build:tech-lead": "typst compile --root . --input profile=tech-lead templates/modern.typ resume-tech-lead-modern.pdf && typst compile --root . --input profile=tech-lead --input photo=true templates/modern.typ resume-tech-lead-modern-photo.pdf",
+    "build:java": "typst compile --root . --input profile=java templates/modern.typ resume-java-modern.pdf && typst compile --root . --input profile=java --input photo=true templates/modern.typ resume-java-modern-photo.pdf",
+    "build:engineering-manager": "typst compile --root . --input profile=engineering-manager templates/modern.typ resume-engineering-manager-modern.pdf && typst compile --root . --input profile=engineering-manager --input photo=true templates/modern.typ resume-engineering-manager-modern-photo.pdf",
+    "build:modern": "typst compile --root . --input profile=tech-lead templates/modern.typ resume-modern.pdf && typst compile --root . --input profile=tech-lead --input photo=true templates/modern.typ resume-modern-photo.pdf",
+    "build:original": "typst compile --root . --input profile=tech-lead templates/original.typ resume-original.pdf && typst compile --root . --input profile=tech-lead --input photo=true templates/original.typ resume-original-photo.pdf",
+    "build:plain": "typst compile --root . --input profile=tech-lead resume.typ resume.pdf",
+    "build:photo": "typst compile --root . --input profile=tech-lead --input photo=true resume.typ resume-photo.pdf",
+    "watch": "typst watch --root . --input profile=tech-lead resume.typ resume.pdf",
+    "watch:photo": "typst watch --root . --input profile=tech-lead --input photo=true resume.typ resume-photo.pdf",
+    "watch:modern": "typst watch --root . --input profile=tech-lead templates/modern.typ resume-modern.pdf",
+    "watch:original": "typst watch --root . --input profile=tech-lead templates/original.typ resume-original.pdf",
+    "watch:java": "typst watch --root . --input profile=java templates/modern.typ resume-java-modern.pdf",
+    "watch:engineering-manager": "typst watch --root . --input profile=engineering-manager templates/modern.typ resume-engineering-manager-modern.pdf"
   }
 }

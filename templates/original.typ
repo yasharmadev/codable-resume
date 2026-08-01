@@ -58,6 +58,8 @@
   #v(0.25em)
   #text(weight: "bold", fill: heading-fill)[Methodologies & Tools] #text(fill: body-fill)[#skills-methods.join(" · ")]
   #v(0.25em)
+  #text(weight: "bold", fill: heading-fill)[AI Tools] #text(fill: body-fill)[#skills-ai.join(" · ")]
+  #v(0.25em)
   #text(weight: "bold", fill: heading-fill)[Testing & CI/CD] #text(fill: body-fill)[#skills-testing.join(" · ")]
 ]
 
