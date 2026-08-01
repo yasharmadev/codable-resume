@@ -87,6 +87,8 @@
   #v(skills-row-gap)
   #text(weight: "bold", fill: navy)[Methodologies & Tools] #text(fill: body-fill)[ #skills-methods.join(" · ")]
   #v(skills-row-gap)
+  #text(weight: "bold", fill: navy)[AI Tools] #text(fill: body-fill)[ #skills-ai.join(" · ")]
+  #v(skills-row-gap)
   #text(weight: "bold", fill: navy)[Testing & CI/CD] #text(fill: body-fill)[ #skills-testing.join(" · ")]
 ]
 
